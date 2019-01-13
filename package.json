@@ -1,6 +1,6 @@
 {
   "name": "@contain/monorepo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": "https://github.com/sciice/monorepo.git",
   "peerDependencies": {
     "umi": "2.x"
