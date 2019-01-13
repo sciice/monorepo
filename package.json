@@ -1,0 +1,23 @@
+{
+  "name": "@contain/monorepo",
+  "version": "0.0.0",
+  "repository": "https://github.com/sciice/monorepo.git",
+  "peerDependencies": {
+    "umi": "2.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepublishOnly": "np --no-cleanup --no-publish --yolo --tag=beta"
+  },
+  "devDependencies": {
+    "np": "^3.0.4",
+    "assert": "^1.4.1",
+    "globby": "^9.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "license": "MIT"
+}
