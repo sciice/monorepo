@@ -3,7 +3,7 @@ import { join, relative } from 'path';
 import globby from 'globby';
 
 export default (api) => {
-  const { cwd, paths, winPath, singular } = api;
+  const { cwd, paths, winPath, config } = api;
   const isDev = process.env.NODE_ENV === 'development';
 
   if (isDev) return;
@@ -29,12 +29,12 @@ export default (api) => {
   }
 
   function findModels() {
-    const model = singular ? 'model' : 'models';
+    const model = config.singular ? 'model' : 'models';
     const models = [
-      ...(globby.sync(`**/${model}/**/*.js`, {
+      ...(globby.sync(`**/${model}/**/*.{ts,tsx,js,jsx}`, {
         cwd: paths.absSrcPath,
       })),
-      ...(globby.sync(`**/${model}.js`, {
+      ...(globby.sync('**/model.{ts,tsx,js,jsx}', {
         cwd: paths.absSrcPath,
       })),
     ];
