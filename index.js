@@ -32,10 +32,10 @@ export default (api) => {
     const model = config.singular ? 'model' : 'models';
     const models = [
       ...(globby.sync(`**/${model}/**/*.{ts,tsx,js,jsx}`, {
-        cwd: paths.absSrcPath,
+        cwd: paths.absPagesPath,
       })),
       ...(globby.sync('**/model.{ts,tsx,js,jsx}', {
-        cwd: paths.absSrcPath,
+        cwd: paths.absPagesPath,
       })),
     ];
     return models;
